@@ -50,8 +50,8 @@ Replace `myapp` with the name of your application, and replace `myapp.jar` with 
 ## Stage 2: Create the runtime image
 
 - We start with a Java Runtime Environment (JRE) image that includes JDK 11.
-- We create a working directory /app.
-- We copy the myapp.jar file from the build stage to the working directory in the runtime stage using the --from=build option to reference the build stage.
-- We set the default command to run the application using the CMD instruction.
+- We create a working directory `/app`.
+- We copy the `myapp.jar` file from the build stage to the working directory in the runtime stage using the `--from=build` option to reference the build stage.
+- We set the default command to run the application using the `CMD` instruction.
 
 This multi-stage Dockerfile allows us to separate the build process and the runtime environment into two separate stages, which can reduce the size of the final image by only including the files needed to run the application. In this example, we use Maven to build the application in the first stage and then use only the JRE in the second stage to create a smaller runtime image.
